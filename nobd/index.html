@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html><head>
-<title>Viewing sites by DRAGON&CHEAT</title>
+<html manifest="cache.manifest">
+<head>
+<title>PS4 9.00 FW Host v2.8 by GamerHack | Manual Exploitation</title>
 <link rel="stylesheet" href="../style.css">
+<script src="int64.js"></script>
+<script src="rop.js"></script>
+<script src="kexploit.js"></script>
+<script src="webkit.js"></script>
 </head>
 <body>
+<script>
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));for (let i=0; i<57; i++){document.getElementsByTagName("button")[i].removeAttribute("onmouseover");}for (let i=0; i<57; i++){document.getElementsByTagName("button")[i].removeAttribute("onmouseout");}window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully ✔";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+</script>
+<br>
+<br>    
 <h1 id="msgs">NViewing sites by DRAGON&CHEAT</h1>
 <hr>
+<br>   
+<div id="menu">
+<button class="btn btn-onln" onmouseover="msgs.innerHTML='Enable/Disable Browser History.'" onmouseout="msgs.innerHTML='hitory block Host DRAGON&CHEAT'" onclick="load_historyBlocker()"> أظغط هناا في البداية ثم تصفح </button>
+</div> 
+<br>  
 <br>
-<div>
-<br> 
-<button class="btn" onmouseover="msgs.innerHTML='Enable/Disable Browser History.'" onmouseout="msgs.innerHTML='hitory block Host DRAGON&CHEAT'" onclick="load_historyBlocker()"> أظغط هناا في البداية ثم تصفح </button>  
+<br>   
 <h1 style="font-size: 18px;color: yellow;"> أختر المنصة التي ترغب  </h1>
-<br>
-<br>  
-<br>  
+<br> 
 <a href="https://1kora.syrialive.online/"><button class="btn" onmouseover="msgs.innerHTML='مشاهدة مباريات كرة القدم-مباشر'" onmouseout="msgs.innerHTML='footbal-live'"> sport-tv </button></a>
 <a href="http://tv.giganet.iq//"><button class="btn" onmouseover="msgs.innerHTML='نقل-مباشر للقنوات'" onmouseout="msgs.innerHTML='giganet'"> Giganet-TV </button></a>
 <a href="https://en.tv96.cc/"><button class="btn" onmouseover="msgs.innerHTML='نقل-مباشر للمباريات'" onmouseout="msgs.innerHTML=''"> sport-TV96 </button></a>
@@ -38,7 +50,26 @@
 <br>
 <h1 style="margin-top: 400px;"> - :<a href=" " style="color: #f3114;"> Dragon: </a>for making this possible.</h1>
 <script>
+sessionStorage.setItem("exploit","no");
+sessionStorage.setItem("netcat","no");
+sessionStorage.setItem("linux","no");
+
+function linux_group(){
+document.getElementById("lnx").style.display = "block";
+document.getElementById("menu").style.display = "none";
 }
+
+function mods_group(){
+document.getElementById("mods").style.display = "block";
+document.getElementById("menu").style.display = "none";
+}
+
+function load_menu(){
+document.getElementById("menu").style.display = "block";
+document.getElementById("lnx").style.display = "none";
+document.getElementById("mods").style.display = "none";
+}
+
 function allset(){
 msgs.innerHTML = LoadedMSG
 }
@@ -159,13 +190,431 @@ function loadScript(path)
     xhr.send('');
     return xhr.responseText;
 }
+
+for(var i=40; i<=75; i=i+5){
+    var select = document.getElementById("tempC");
+    var option = document.createElement("OPTION");
+	select.options.add(option);
+	option.text = i;
+	option.value = i;
+}
+tempC.value=60;
+
+function linux_loader(pl){
+if (sessionStorage.exploit == "yes"){
+setTimeout(loadScript("netcat.js")
++loadScript('malloc.js')
++loadScript('rop2.js')
++loadScript('syscalls.js')
++loadScript('syscalls2.js')
++loadScript(pl)
++loadScript('jbc_loader.js')
++loadScript('relocator.js'),1500);
+setTimeout(allset, 50);
+LoadedMSG = "Linux Loader Launched ..."
+}
+}
+
+function load_goldhen24b14(){
+msgs.innerHTML="Loading GoldHEN v2.4b14... Please Wait";
+LoadedMSG = "GoldHEN v2.4b14 Loaded ...";
+PLfile = "goldhen_2.4b14.bin";
+load_poc();
+}
+
+function load_goldhen23(){
+msgs.innerHTML="Loading GoldHEN v2.3... Please Wait";
+LoadedMSG = "GoldHEN v2.3 Loaded ...";
+PLfile = "goldhen_2.3.bin";
+load_poc();
+}
+
+function load_binloader(){
+msgs.innerHTML="Launching Bin Loader... Please Wait";
+if (sessionStorage.exploit == "yes") {  
+   exec_binserver();
+}
+else {
+    sessionStorage.netcat = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_todex(){
+msgs.innerHTML="Loading ToDex... Please Wait"
+LoadedMSG = "ToDex Loaded ...";
+PLfile = "todex.bin";
+load_poc();
+}
+
+function load_dumper(){
+msgs.innerHTML="Loading App-Dumper... Please Wait"
+LoadedMSG = "App-Dumper Loaded ...";
+PLfile = "dumper.bin";
+load_poc();
+}
+
+function load_ftp(){
+msgs.innerHTML="Loading FTP... Please Wait"
+LoadedMSG = "FTP Loaded ..."
+PLfile = "ftp.bin";
+load_poc();
+}
+
+function load_app2usb(){
+msgs.innerHTML="Loading App2USB... Please Wait"
+LoadedMSG = "App2USB Loaded ..."
+PLfile = "app2usb.bin";
+load_poc();
+}
+
+function load_dbackup(){
+msgs.innerHTML="Loading DB Backup... Please Wait"
+LoadedMSG = "DB Backup Loaded ..."
+PLfile = "backup.bin";
+load_poc();
+}
+
+function load_dbrestore(){
+msgs.innerHTML="Loading DB Restore... Please Wait"
+LoadedMSG = "DB Restore Loaded ..."
+PLfile = "restore.bin";
+load_poc();
+}
+
+function load_enablebUpdates(){
+msgs.innerHTML="Loading Enable Updates... Please Wait"
+LoadedMSG = "Enable Updates Loaded ..."
+PLfile = "enable-updates.bin";
+load_poc();
+}
+
+function load_disableUpdates(){
+msgs.innerHTML="Loading Disable Updates... Please Wait"
+LoadedMSG = "Disable Updates Loaded ..."
+PLfile = "disable-updates.bin";
+load_poc();
+}
+
 function load_historyBlocker(){
 msgs.innerHTML="Loading History Blocker... Please Wait"
 LoadedMSG = "History Blocker Loaded ..."
 PLfile = "history-blocker.bin";
 load_poc();
-}  
+}
+
+function load_kernelDump(){
+msgs.innerHTML="Loading Kernel Dumper... Please Wait"
+LoadedMSG = "Kernel Dumper Loaded ..."
+PLfile = "kernel-dumper.bin";
+load_poc();
+}
+
+function load_moduleDump(){
+msgs.innerHTML="Loading Module Dumper... Please Wait"
+LoadedMSG = "Module Dumper Loaded ..."
+PLfile = "module-dumper.bin";
+load_poc();
+}
+
+function load_ps4debug(){
+msgs.innerHTML="Loading PS4 Debug... Please Wait"
+LoadedMSG = "PS4 Debug Loaded ..."
+PLfile = "ps4debug.bin";
+load_poc();
+}
+
+function load_disbAslr(){
+msgs.innerHTML="Loading Disable ASLR... Please Wait"
+LoadedMSG = "Disable ASLR Loaded ..."
+PLfile = "disable-aslr.bin";
+load_poc();
+}
+
+function load_exitidu(){
+msgs.innerHTML="Loading Exit IDU... Please Wait"
+LoadedMSG = "Exit IDU Loaded ..."
+PLfile = "exit-idu.bin";
+load_poc();
+}
+
+function load_rifRen(){
+msgs.innerHTML="Loading RIF Renamer... Please Wait"
+LoadedMSG = "RIF Renamer Loaded ..."
+PLfile = "rif-renamer.bin";
+load_poc();
+}
+
+function load_permUart(){
+msgs.innerHTML="Loading Permanent UART... Please Wait"
+LoadedMSG = "Permanent UART Loaded ..."
+PLfile = "permanent-uart.bin";
+load_poc();
+}
+
+function load_webrte(){
+msgs.innerHTML="Loading WebRTE... Please Wait"
+LoadedMSG = "WebRTE Loaded ..."
+PLfile = "webrte.bin";
+load_poc();
+}
+
+function load_toolbox(){
+msgs.innerHTML="Loading Orbis-Toolbox... Please Wait"
+LoadedMSG = "Orbis-Toolbox Loaded ..."
+PLfile = "Orbis-Toolbox-900.bin";
+load_poc();
+}
+
+function load_fanthreshold(){
+msgs.innerHTML="Loading Fan Threshold... Please Wait"
+LoadedMSG = "Fan Threshold Loaded ..."
+PLfile = "fan-threshold"+tempC.value+".bin";
+load_poc();
+}
+
+function load_southbridge(){
+msgs.innerHTML="Loading Payload... Please Wait"
+LoadedMSG = "Payload Loaded ..."
+PLfile = "southbridge.bin";
+load_poc();
+}
+
+function load_linux1gb(){
+msgs.innerHTML="Loading Linux with 1GB VRAM... Please Wait"
+PLfile = "Linux-1gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linux2gb(){
+msgs.innerHTML="Loading Linux with 2GB VRAM... Please Wait"
+PLfile = "Linux-2gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linux3gb(){
+msgs.innerHTML="Loading Linux with 3GB VRAM... Please Wait"
+PLfile = "Linux-3gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linux4gb(){
+msgs.innerHTML="Loading Linux with 4GB VRAM... Please Wait"
+PLfile = "Linux-4gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linuxPS4Pro1gb(){
+msgs.innerHTML="Loading Linux with 1GB VRAM... Please Wait"
+PLfile = "LinuxPro-1gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linuxPS4Pro2gb(){
+msgs.innerHTML="Loading Linux with 2GB VRAM... Please Wait"
+PLfile = "LinuxPro-2gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linuxPS4Pro3gb(){
+msgs.innerHTML="Loading Linux with 3GB VRAM... Please Wait"
+PLfile = "LinuxPro-3gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_linuxPS4Pro4gb(){
+msgs.innerHTML="Loading Linux with 4GB VRAM... Please Wait"
+PLfile = "LinuxPro-4gb.js";
+if (sessionStorage.exploit == "yes") {  
+   linux_loader(PLfile);
+}
+else {
+    sessionStorage.linux = "yes";
+    setTimeout(poc, 1500);   
+}    
+}
+
+function load_arabicGuy100(){
+msgs.innerHTML="Loading Arabic Guy v1.00... Please Wait";
+LoadedMSG = "Arabic Guy v1.00 Loaded ..."
+PLfile = "arabic-guy100.bin";
+load_poc();
+}
+
+function load_arabicGuy127(){
+msgs.innerHTML="Loading Arabic Guy v1.27... Please Wait";
+LoadedMSG = "Arabic Guy v1.27 Loaded ..."
+PLfile = "arabic-guy127.bin";
+load_poc();
+}
+
+function load_arabicGuy132(){
+msgs.innerHTML="Loading Arabic Guy v1.32... Please Wait";
+LoadedMSG = "Arabic Guy v1.32 Loaded ..."
+PLfile = "arabic-guy132.bin";
+load_poc();
+}
+
+function load_arabicGuy133(){
+msgs.innerHTML="Loading Arabic Guy v1.33... Please Wait";
+LoadedMSG = "Arabic Guy v1.33 Loaded ..."
+PLfile = "arabic-guy133.bin";
+load_poc();
+}
+
+function load_Expulsion(){
+msgs.innerHTML="Loading Expulsion v4.0... Please Wait";
+LoadedMSG = "Expulsion v4.0 Loaded ..."
+PLfile = "Expulsion-V4.0-1.38.bin";
+load_poc();
+}
+
+function load_Lamance(){
+msgs.innerHTML="Loading Lamance v0.9... Please Wait";
+LoadedMSG = "Lamance v0.9 Loaded ..."
+PLfile = "Lamance-v0.9-1.38.bin";
+load_poc();
+}
+
+function load_WildeModz132(){
+msgs.innerHTML="Loading WildeModz-1.32... Please Wait";
+LoadedMSG = "WildeModz-1.32 Loaded ..."
+PLfile = "WildeModz-1.32.bin";
+load_poc();
+}
+
+function load_WildeModz133(){
+msgs.innerHTML="Loading WildeModz-1.33... Please Wait";
+LoadedMSG = "WildeModz-1.33 Loaded ..."
+PLfile = "WildeModz-1.33.bin";
+load_poc();
+}
+
+function load_WildeModz138(){
+msgs.innerHTML="Loading WildeModz-1.38... Please Wait";
+LoadedMSG = "WildeModz-1.38 Loaded ..."
+PLfile = "WildeModz-1.38.bin";
+load_poc();
+}
+
+function load_WildeModz146(){
+msgs.innerHTML="Loading WildeModz-1.46... Please Wait";
+LoadedMSG = "WildeModz-1.46 Loaded ..."
+PLfile = "WildeModz-1.46.bin";
+load_poc();
+}
+
+function load_WildeModz147(){
+msgs.innerHTML="Loading WildeModz-1.47... Please Wait";
+LoadedMSG = "WildeModz-1.47 Loaded ..."
+PLfile = "WildeModz-1.47.bin";
+load_poc();
+}
+
+function load_beefQueef133(){
+msgs.innerHTML="Loading Beef Queef Mod v1.33... Please Wait";
+LoadedMSG = "Beef Queef Mod v1.33 Loaded ..."
+PLfile = "BeefQueefMod-133.bin";
+load_poc();
+}
+
+function load_beefQueef134(){
+msgs.innerHTML="Loading Beef Queef Mod v1.34... Please Wait";
+LoadedMSG = "Beef Queef Mod v1.34 Loaded ..."
+PLfile = "BeefQueefMod-134.bin";
+load_poc();
+}
+
+function load_beefQueef138(){
+msgs.innerHTML="Loading Beef Queef Mod v1.38d... Please Wait";
+LoadedMSG = "Beef Queef Mod v1.38d Loaded ..."
+PLfile = "BeefQueefMod-138d.bin";
+load_poc();
+}
+
+function load_beefQueef147(){
+msgs.innerHTML="Loading Beef Queef Mod v1.47... Please Wait";
+LoadedMSG = "Beef Queef Mod v1.47 Loaded ..."
+PLfile = "BeefQueefMod-Unified-147e.bin";
+load_poc();
+}
+
+function load_Oysters100(){
+msgs.innerHTML="Loading Oysters Menu v1.00... Please Wait";
+LoadedMSG = "Oysters Menu v1.00 Loaded ..."
+PLfile = "OystersMenu-v1.00.bin";
+load_poc();
+}
+
+function load_Oysters113(){
+msgs.innerHTML="Loading Oysters Menu v1.13... Please Wait";
+LoadedMSG = "Oysters Menu v1.13 Loaded ..."
+PLfile = "OystersMenu-v1.13.bin";
+load_poc();
+}
+
+function load_Oysters119(){
+msgs.innerHTML="Loading Oysters Menu v1.19... Please Wait";
+LoadedMSG = "Oysters Menu v1.19 Loaded ..."
+PLfile = "OystersMenu-v1.19.bin";
+load_poc();
+}
+
+function load_Oysters124(){
+msgs.innerHTML="Loading Oysters Menu v1.24... Please Wait";
+LoadedMSG = "Oysters Menu v1.24 Loaded ..."
+PLfile = "OystersMenu-v1.24.bin";
+load_poc();
+}
+
+function load_Oysters129(){
+msgs.innerHTML="Loading Oysters Menu v1.29... Please Wait";
+LoadedMSG = "Oysters Menu v1.29 Loaded ..."
+PLfile = "OystersMenu-v1.29.bin";
+load_poc();
+}
 </script>
-</div>
 </body>
 </html>  
