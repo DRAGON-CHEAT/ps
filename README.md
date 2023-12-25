@@ -1,4 +1,4 @@
-# PS4 - PS5 Exploit Host https://websemantics.uk/tools/image-to-data-uri-converter/
+# PS4 - PS5 Exploit Host
 PS4 Firmwares:   `9.00`
 
 PS5 Firmwares: `3.XX` `4.XX` soon
