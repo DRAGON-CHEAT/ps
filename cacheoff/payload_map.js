@@ -5,15 +5,15 @@ const payload_map = [
     info: 'Descripción de etaHEN ', // Mantener "info"
     fileName: 'etaHEN-1.1b.bin',
     author: 'by dragon',
-    version: 'v1'
+    version: '?'
   },
   {
     displayTitle: 'etaHEN V2',
     description: '', // Dejar "description" vacío
-    info: 'Descripción de etaHEN', // Mantener "info"
+    info: 'Descripción de EtaHEN', // Mantener "info"
     fileName: 'etaHEN-1.2B.bin',
-    author: 'BY dragon',
-    version: 'v2'
+    author: 'by dragon',
+    version: '?'
   },
   {
     displayTitle: 'libhijacker game-patch',
