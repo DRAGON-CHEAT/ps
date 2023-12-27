@@ -12,7 +12,7 @@ const payload_map = [
     description: '', // Dejar "description" vacío
     info: 'Descripción de EtaHEN', // Mantener "info"
     fileName: 'etaHEN-1.2B.bin',
-    author: 'by dragon',
+    author: 'by Dragon',
     version: '?'
   },
   {
