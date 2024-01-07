@@ -23,6 +23,16 @@ const payload_map =
             author: 'Storm21CH',
             source:'https://github.com/Storm21CH/PS5_Browser_appCache_remove/blob/main/Browser_appCache_remove.elf',
             version: '1.0fix'
-        }
+        },
+        {
+            displayTitle: 'libhijacker game-patch',
+            description: '', // Dejar "description" vacío
+            info: 'Descripción de libhijacker game-patch', // Mantener "info"
+            fileName: 'spawner.elf',
+            author: 'illusion0001, astrelsky',
+            source: 'https://github.com/illusion0001/libhijacker/releases/tag/1.138',
+            loader: 'libhijacker',
+            version: '1.138'
+        },
 
     ];
