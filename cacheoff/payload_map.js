@@ -104,15 +104,25 @@ const payload_map = [
             source: 'https://github.com/logic-68/getOsVersion/releases',
             version: '1.0.2'
         },
-    {
-    displayTitle: 'HW Info',
-    description: '', // Dejar "description" vacío
-    info: 'Descripción de HW Info', // Mantener "info"
-    fileName: 'hwinfo-tornblom.elf',
-    author: '?',
-    source: '?',
-    version: '?'
-  },
+     {
+            displayTitle: 'HW Info',
+            description: '', // Dejar "description" vacío  
+            info: 'Descripción de HW Info', // Mantener "info"
+            fileName: 'hwinfo-tornblom.elf',
+            author: '?',
+            source: '?',
+            version: '?'
+        },
+     {
+            displayTitle: 'ps5debug',
+            description: '', // Dejar "description" vacío  
+            info: 'Descripción de HW Info', // Mantener "info"
+            fileName: 'ps5debug.elf',
+            author: 'SiSTR0, ctn123',
+            source: 'https://github.com/GoldHEN/ps5debug',
+            version: '1.0b1'
+        },
+  
 
 ];
 
