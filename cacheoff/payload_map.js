@@ -19,9 +19,9 @@ const payload_map = [
     displayTitle: 'libhijacker game-patch',
     description: '', // Dejar "description" vacío
     info: 'Descripción de libhijacker game-patch', // Mantener "info"
-    fileName: 'libhijacker-1.138.elf',
+    fileName: 'spawner.elf',
     author: 'illusion0001, astrelsky',
-    source: 'https://github.com/illusion0001/libhijacker/releases',
+    source: 'https://github.com/illusion0001/libhijacker/releases/tag/1.138',
     loader: 'libhijacker',
     version: '1.138'
   },
