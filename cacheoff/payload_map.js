@@ -1,11 +1,11 @@
 const payload_map = [
   {
-    displayTitle: 'etaHEN V1',
+    displayTitle: 'etaHEN V3',
     description: '', // Dejar "description" vacío
     info: 'Descripción de etaHEN ', // Mantener "info"
-    fileName: 'etaHEN-1.1b.bin',
+    fileName: 'etaHEN-1.3B.bin',
     author: 'by dragon',
-    version: '?'
+    version: 'v3'
   },
   {
     displayTitle: 'etaHEN V2',
@@ -13,26 +13,17 @@ const payload_map = [
     info: 'Descripción de EtaHEN', // Mantener "info"
     fileName: 'etaHEN-1.2B.bin',
     author: 'by Dragon',
-    version: '?'
+    version: 'v2'
   },
   {
     displayTitle: 'libhijacker game-patch',
     description: '', // Dejar "description" vacío
     info: 'Descripción de libhijacker game-patch', // Mantener "info"
-    fileName: 'libhijacker-spawner-1.124.elf;libhijacker-daemon-1.124.elf',
+    fileName: 'libhijacker-1.138.elf',
     author: 'illusion0001, astrelsky',
     source: 'https://github.com/illusion0001/libhijacker/releases',
     loader: 'libhijacker',
-    version: '1.124'
-  },
-  {
-    displayTitle: 'HW Info',
-    description: '', // Dejar "description" vacío
-    info: 'Descripción de HW Info', // Mantener "info"
-    fileName: 'hwinfo-tornblom.elf',
-    author: '?',
-    source: '?',
-    version: '?'
+    version: '1.138'
   },
   {
     displayTitle: 'Remove Cache',
@@ -41,6 +32,15 @@ const payload_map = [
     fileName: 'Browser_appCache_remove.elf',
     author: 'Storm21CH',
     version: '1.0fix'
+  },
+  {
+    displayTitle: 'Kstuff',
+    description: '', // Dejar "description" vacío
+    fileName: 'ps5-kstuff-v1.2.bin',
+    info: 'Descripción de Kstuff', // Mantener "info"
+    author: 'sleirsgoevy',
+    source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
+    version: '1.2'
   },
   {
     displayTitle: 'Version',
@@ -59,7 +59,7 @@ const payload_map = [
     source: '?',
     version: '1.0'
   },
-   {
+  {
             displayTitle: 'Backup DB',
             description: '', // Dejar "description" vacío
             fileName: 'Backup-db-PS5.bin',
@@ -68,15 +68,52 @@ const payload_map = [
             source:'?',
             version: '0.5'
         },
-  {
-            displayTitle: 'Kstuff',
+    {
+            displayTitle: 'FTPS5 (Non-Persistent)',
             description: '', // Dejar "description" vacío
-            fileName: 'ps5-kstuff-v1.2.bin',
-            info: 'Descripción de Kstuff', // Mantener "info"
+            fileName: 'ftps5-np.elf',
+            info: 'SiSTR0, Dragon, Echo', // Mantener "info"
             author: 'sleirsgoevy',
-            source: 'https://github.com/sleirsgoevy/ps4jb2/blob/ps5-403/ps5-kstuff.bin',
-            version: '1.1'
+            source: 'https://github.com/EchoStretch/FTPS5/releases',
+            version: '1.4'
         },
+    { 
+            displayTitle: 'FTPS5 (Persistent)',
+            description: '', // Dejar "description" vacío
+            fileName: 'ftps5-p.elf',
+            info: 'SiSTR0, Dragon, Echo', // Mantener "info"
+            author: 'sleirsgoevy',
+            source: 'https://github.com/EchoStretch/FTPS5/releases',
+            version: '1.4'
+        },
+    {
+            displayTitle: 'PS5 Payload ELF Loader',
+            description: '', // Dejar "description" vacío
+            fileName: 'elfldr.elf',
+            info: 'SiSTR0, Dragon, Echo', // Mantener "info"
+            author: 'sleirsgoevy',
+            source: 'https://github.com/john-tornblom/ps5-payload-elfldr/releases',
+            version: '0.5'
+        },
+     {
+            displayTitle: 'GetOSVersion',
+            description: '', // Dejar "description" vacío
+            fileName: 'getOsVersion.elf',
+            info: 'SiSTR0, Dragon, Echo', // Mantener "info"
+            author: 'sleirsgoevy',
+            source: 'https://github.com/logic-68/getOsVersion/releases',
+            version: '1.0.2'
+        },
+    {
+    displayTitle: 'HW Info',
+    description: '', // Dejar "description" vacío
+    info: 'Descripción de HW Info', // Mantener "info"
+    fileName: 'hwinfo-tornblom.elf',
+    author: '?',
+    source: '?',
+    version: '?'
+  },
+
 ];
 
 // JavaScript para mostrar info en lugar de description
